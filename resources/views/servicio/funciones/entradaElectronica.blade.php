@@ -3,7 +3,7 @@
 @section('content')
   <div class="container" id="app">
     <center><h2>Nueva Entrada de Electrica y Electronica</h2></center>
-    <form action="entradas" class="form-horizontal" method="get">
+    <form action="entradasElectronica" class="form-horizontal" method="get">
         @if(count($errors) > 0)
             <div class="errors">
                 <ul class="alert-danger">
@@ -77,7 +77,7 @@
         <div class="form-group">
             <div class="col-sm-10">
               <label for="cantidad">Ubicacion del Producto:</label>
-                <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion del producto en el Anaquel"   required>
+                <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion del producto en el Anaquel" style="text-transform: uppercase;"  required>
             </div>
         </div>
 

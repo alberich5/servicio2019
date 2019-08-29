@@ -101,6 +101,10 @@ Route::group(['middleware'=> 'Role:admin'], function(){
     Route::get('/unidades', 'servicio\UnidadController@guardar');
     Route::get('/entradas', 'servicio\EntradaController@guardar');
     Route::get('/entradasRefa', 'servicio\EntradaController@guardar2');
+    Route::get('/entradasLimpieza', 'servicio\EntradaController@guardarLimpieza');
+    Route::get('/entradasElectronica', 'servicio\EntradaController@guardarElectronica');
+    Route::get('/entradasMedicina', 'servicio\EntradaController@guardarMedicina');
+    Route::get('/entradasTonner', 'servicio\EntradaController@guardarTonner');
 
     Route::get('/posts/editposts/{id}', 'servicio\PostsController@show');
 

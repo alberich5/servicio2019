@@ -33,8 +33,8 @@ class EntradaController extends Controller
         $entrada->cantidad=$request->get('cantidad');
         $entrada->cantidadOriginal=$request->get('cantidad');
         $entrada->status='activo';
-        $entrada->ubicacion=$request->get('ubicacion');
-        $entrada->tipo='p';
+        $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+        $entrada->tipo='papeleria';
         $entrada->motivo='';
         $entrada->save();
 
@@ -50,10 +50,9 @@ class EntradaController extends Controller
       $log=new Log;
       $log->id_entrada=$identrada;
       $log->cantidad_inicial=$canti_ini;
-      $log->tipo='entrada';
+      $log->tipo='entradaPapeleria';
       $log->fecha_log=$request->get('fecha');
       $log->save();
-
 
       return redirect('articulos');
   }
@@ -76,8 +75,8 @@ class EntradaController extends Controller
       $entrada->cantidad=$request->get('cantidad');
       $entrada->cantidadOriginal=$request->get('cantidad');
       $entrada->status='activo';
-      $entrada->ubicacion=$request->get('ubicacion');
-      $entrada->tipo='rw';
+      $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+      $entrada->tipo='refaccion';
       //$entrada->ubicacion='pendiente';
       $entrada->motivo='';
       $entrada->destinado=strtoupper($request->get('destinado'));
@@ -95,14 +94,163 @@ class EntradaController extends Controller
       $log=new Log;
       $log->id_entrada=$identrada;
       $log->cantidad_inicial=$canti_ini;
-      $log->tipo='entrada';
+      $log->tipo='entradaRefaccion';
       $log->fecha_log=$request->get('fecha');
       $log->save();
-
-
       return redirect('articulos');
   }
 
+  public function guardarLimpieza(Request $request)
+  {
+    //calcular iva
+    $preci= $request->get('precio');
+    $iva=($preci*0.16)+$preci;
+    $entrada=new Entrada;
+        $entrada->id_usuario=$request->get('id_usuario');
+        $entrada->id_unidad=$request->get('unidad');
+        $entrada->fecha_ingreso=$request->get('fecha');
+        $entrada->descripcion=strtoupper($request->get('descripcion'));
+        $entrada->marca=strtoupper($request->get('marca'));
+        $entrada->precio=$request->get('precio');
+        $entrada->precio_iva=$iva;
+        $entrada->cantidad=$request->get('cantidad');
+        $entrada->cantidadOriginal=$request->get('cantidad');
+        $entrada->status='activo';
+        $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+        $entrada->tipo='limpieza';
+        $entrada->motivo='';
+        $entrada->save();
+
+      $entradas = Entrada::orderBy('created_at', 'desc')
+      ->limit(1)->get();
+      $identrada="";
+      $canti_ini="";
+      foreach ($entradas as $entra) {
+          $identrada = $entra->id;
+          $canti_ini = $entra->cantidad;
+      }
+      $log=new Log;
+      $log->id_entrada=$identrada;
+      $log->cantidad_inicial=$canti_ini;
+      $log->tipo='entradaLimpieza';
+      $log->fecha_log=$request->get('fecha');
+      $log->save();
+      return redirect('articulos');
+  }
+
+  public function guardarElectronica(Request $request)
+  {
+    //calcular iva
+    $preci= $request->get('precio');
+    $iva=($preci*0.16)+$preci;
+    $entrada=new Entrada;
+        $entrada->id_usuario=$request->get('id_usuario');
+        $entrada->id_unidad=$request->get('unidad');
+        $entrada->fecha_ingreso=$request->get('fecha');
+        $entrada->descripcion=strtoupper($request->get('descripcion'));
+        $entrada->marca=strtoupper($request->get('marca'));
+        $entrada->precio=$request->get('precio');
+        $entrada->precio_iva=$iva;
+        $entrada->cantidad=$request->get('cantidad');
+        $entrada->cantidadOriginal=$request->get('cantidad');
+        $entrada->status='activo';
+        $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+        $entrada->tipo='electronica';
+        $entrada->motivo='';
+        $entrada->save();
+
+      $entradas = Entrada::orderBy('created_at', 'desc')
+      ->limit(1)->get();
+      $identrada="";
+      $canti_ini="";
+      foreach ($entradas as $entra) {
+          $identrada = $entra->id;
+          $canti_ini = $entra->cantidad;
+      }
+      $log=new Log;
+      $log->id_entrada=$identrada;
+      $log->cantidad_inicial=$canti_ini;
+      $log->tipo='entradaElectronica';
+      $log->fecha_log=$request->get('fecha');
+      $log->save();
+      return redirect('articulos');
+  }
+
+  public function guardarMedicina(Request $request)
+  {
+    //calcular iva
+    $preci= $request->get('precio');
+    $iva=($preci*0.16)+$preci;
+    $entrada=new Entrada;
+        $entrada->id_usuario=$request->get('id_usuario');
+        $entrada->id_unidad=$request->get('unidad');
+        $entrada->fecha_ingreso=$request->get('fecha');
+        $entrada->descripcion=strtoupper($request->get('descripcion'));
+        $entrada->marca=strtoupper($request->get('marca'));
+        $entrada->precio=$request->get('precio');
+        $entrada->precio_iva=$iva;
+        $entrada->cantidad=$request->get('cantidad');
+        $entrada->cantidadOriginal=$request->get('cantidad');
+        $entrada->status='activo';
+        $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+        $entrada->tipo='medicina';
+        $entrada->motivo='';
+        $entrada->save();
+
+      $entradas = Entrada::orderBy('created_at', 'desc')
+      ->limit(1)->get();
+      $identrada="";
+      $canti_ini="";
+      foreach ($entradas as $entra) {
+          $identrada = $entra->id;
+          $canti_ini = $entra->cantidad;
+      }
+      $log=new Log;
+      $log->id_entrada=$identrada;
+      $log->cantidad_inicial=$canti_ini;
+      $log->tipo='entradaMedicina';
+      $log->fecha_log=$request->get('fecha');
+      $log->save();
+      return redirect('articulos');
+  }
+
+  public function guardarTonner(Request $request)
+  {
+    //calcular iva
+    $preci= $request->get('precio');
+    $iva=($preci*0.16)+$preci;
+    $entrada=new Entrada;
+        $entrada->id_usuario=$request->get('id_usuario');
+        $entrada->id_unidad=$request->get('unidad');
+        $entrada->fecha_ingreso=$request->get('fecha');
+        $entrada->descripcion=strtoupper($request->get('descripcion'));
+        $entrada->marca=strtoupper($request->get('marca'));
+        $entrada->precio=$request->get('precio');
+        $entrada->precio_iva=$iva;
+        $entrada->cantidad=$request->get('cantidad');
+        $entrada->cantidadOriginal=$request->get('cantidad');
+        $entrada->status='activo';
+        $entrada->ubicacion=strtoupper($request->get('ubicacion'));
+        $entrada->tipo='tonner';
+        $entrada->motivo='';
+        $entrada->save();
+
+      $entradas = Entrada::orderBy('created_at', 'desc')
+      ->limit(1)->get();
+      $identrada="";
+      $canti_ini="";
+      foreach ($entradas as $entra) {
+          $identrada = $entra->id;
+          $canti_ini = $entra->cantidad;
+      }
+      $log=new Log;
+      $log->id_entrada=$identrada;
+      $log->cantidad_inicial=$canti_ini;
+      $log->tipo='entradaTonner';
+      $log->fecha_log=$request->get('fecha');
+      $log->save();
+      return redirect('articulos');
+  }
 
 
   public function mostrar()

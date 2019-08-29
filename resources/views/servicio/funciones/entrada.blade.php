@@ -84,7 +84,7 @@
         <div class="form-group">
             <div class="col-sm-10">
               <label for="cantidad">Ubicacion del Producto:</label>
-                <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion del producto en el Anaquel"   required>
+                <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion del producto en el Anaquel" style="text-transform: uppercase;"  required>
             </div>
         </div>
 
