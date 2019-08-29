@@ -82,7 +82,19 @@
                                       <li><a href="{{ url('/tonner') }}">Entrada Tonner</a></li>
                               </ul>
                           </li>
-                            <li><a href="{{ url('/salida') }}">Salida</a></li>
+                          <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                  Salida <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                      <li><a href="{{ url('/salida') }}">Salida Papeleria</a></li>
+                                      <li><a href="{{ url('/salida-refaccion') }}">Salida Refaciones</a></li>
+                                      <li><a href="{{ url('/salida-limpieza') }}">Salida Limpieza</a></li>
+                                      <li><a href="{{ url('/salida-electronica') }}">Salida Eletronica</a></li>
+                                      <li><a href="{{ url('/salida-medicina') }}">Salida Medicina</a></li>
+                                      <li><a href="{{ url('/salida-tonner') }}">Salida Tonner</a></li>
+                              </ul>
+                          </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Agregar <span class="caret"></span>

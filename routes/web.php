@@ -30,6 +30,12 @@ Route::get('ubicacion', 'servicio\EntradaController@ubicacion');
 
 //servicios gernerales
 Route::get('salida', 'servicio\PostsController@salida');
+Route::get('salida-refaccion', 'servicio\PostsController@salidarefaccion');
+Route::get('salida-limpieza', 'servicio\PostsController@salidarelimpieza');
+Route::get('salida-electronica', 'servicio\PostsController@salidarelectronica');
+Route::get('salida-medicina', 'servicio\PostsController@salidarmedicina');
+Route::get('salida-tonner', 'servicio\PostsController@salidartonner');
+
 Route::get('entrada', 'servicio\PostsController@entrada');
 Route::get('refaciones', 'servicio\PostsController@refaciones');
 Route::get('limpieza', 'servicio\PostsController@limpieza');
@@ -53,6 +59,8 @@ Route::get('mosclientes', 'servicio\ClienteController@mostrar');
 Route::get('mostraruser', 'servicio\UsersController@mostrar');
 Route::get('mosalidas', 'servicio\SalidaController@mostrar');
 Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
+Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
+Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');
 Route::get('guardarSalida', 'servicio\SalidaController@guadar');
 Route::post('guardarBD', 'servicio\SalidaController@guardar');
 Route::get('pruebas', 'servicio\SalidaController@pruebas');

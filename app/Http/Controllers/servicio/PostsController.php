@@ -32,6 +32,16 @@ class PostsController extends Controller
     {
         return view('servicio.funciones.salida');
     }
+    //funcion para salidas
+    public function salidarefaccion()
+    {
+        return view('servicio.funciones.salidaRefaccion');
+    }
+    //funcion para salidas
+    public function salidarelimpieza()
+    {
+        return view('servicio.funciones.salidaLimpieza');
+    }
     //funcion para entradas
     public function entrada()
     {

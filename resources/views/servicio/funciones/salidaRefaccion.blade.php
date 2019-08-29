@@ -15,7 +15,7 @@
       <div class="salida">
 
         <div class="col-md-8 col-md-offset-2">
-          <center><h2>Salida Papeleria</h2></center>
+            <center><h2>Salida Refacción</h2></center>
         <div class="form-group">
             <center>
             <div class="col-sm-12">
@@ -207,14 +207,14 @@ function valida(e){
                 },
                 mostrarArticulos:function(){
                   if (this.clienteSelecionado>0) {
-                    var urlStatus = '/mostrararticulos?query=' + this.buscar;
+                    var urlStatus = '/mostrarRefacion?query=' + this.buscar;
                       axios.get(urlStatus).then(response => {
                       this.articulos = response.data
                       this.veriificarexistencia();
                     });
 
                   }else{
-                    swal('Seleciona Cliente','Seleciona','info');
+                    swal('Seleciona Cliente','Seleciona Cliente','info');
                   }
 
                 },
