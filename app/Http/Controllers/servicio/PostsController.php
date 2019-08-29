@@ -42,6 +42,20 @@ class PostsController extends Controller
     {
         return view('servicio.funciones.salidaLimpieza');
     }
+    public function salidarelectronica()
+    {
+        return view('servicio.funciones.salidaElectronica');
+    }
+    public function salidarmedicina()
+    {
+        return view('servicio.funciones.salidaMedicina');
+    }
+    public function salidartonner()
+    {
+        return view('servicio.funciones.salidaTonner');
+    }
+
+
     //funcion para entradas
     public function entrada()
     {

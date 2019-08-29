@@ -61,6 +61,10 @@ Route::get('mosalidas', 'servicio\SalidaController@mostrar');
 Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
 Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
 Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');
+Route::get('mostrarElectronica', 'servicio\EntradaController@mostrarElectronica');
+Route::get('mostrarMedicina', 'servicio\EntradaController@mostrarMedicina');
+Route::get('mostrarTonner', 'servicio\EntradaController@mostrarTonner');
+
 Route::get('guardarSalida', 'servicio\SalidaController@guadar');
 Route::post('guardarBD', 'servicio\SalidaController@guardar');
 Route::get('pruebas', 'servicio\SalidaController@pruebas');
