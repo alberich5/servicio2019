@@ -111,7 +111,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="{{ url('/grafica') }}">Descargar</a></li>
+                            <li><a href="{{ url('/reporte') }}">Descargar</a></li>
                           <!--  <li><a href="{{ url('/filtro') }}">Filtro</a></li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

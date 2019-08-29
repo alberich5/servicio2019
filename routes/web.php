@@ -22,7 +22,7 @@ Route::get('/home', 'servicio\HomeController@index');
 Route::get('index', 'servicio\PostsController@index');
 
 Route::get('quejas', 'servicio\PostsController@queja');
-Route::get('grafica', 'servicio\PostsController@grafica');
+Route::get('reporte', 'servicio\PostsController@grafica');
 Route::get('filtro', 'servicio\PostsController@filtro');
 Route::get('status', 'servicio\PostsController@status');
 
@@ -80,6 +80,10 @@ Route::get('/export-cancelado', 'servicio\ExcelController@exportCancelados');
 Route::get('/export-prueba', 'servicio\ExcelController@pruebaexcel');
 
 Route::get('/export-refaciones', 'servicio\ExcelController@exportrefaciones');
+Route::get('/export-limpieza', 'servicio\ExcelController@exportlimpieza');
+Route::get('/export-electronica', 'servicio\ExcelController@exportElectronica');
+Route::get('/export-medicina', 'servicio\ExcelController@exportMedicina');
+Route::get('/export-tonner', 'servicio\ExcelController@exportTonner');
 //consumir
 Route::get('traerUnidad', 'servicio\UnidadController@traerUnidad');
 Route::get('traerCliente', 'servicio\ClienteController@traerCliente');

@@ -45,7 +45,7 @@
         <div class="col-sm-6">
           <label for="fecha">Salidas del Dia:</label>
             <input type="date" class="form-control" name="fecha" value="<?php echo date("Y-m-d");?>" >
-            <input type="submit" class="btn btn-primary" value="salidas del Dia" >
+            <input type="submit" class="btn btn-primary" value="Salidas del Dia" >
         </div>
 
     </div>
@@ -57,7 +57,7 @@
     <form action="export-mensual" class="form-horizontal" method="get">
     <div class="form-group">
         <div class="col-sm-6">
-          
+
             <input type="submit" class="btn btn-primary" value="Descargar Papeleria" >
         </div>
 
@@ -70,7 +70,39 @@
                 <input type="submit" class="btn btn-primary" value="Descargar Refaciones" >
             </div>
         </div>
-        </form>
+   </form>
+   <br>
+   <form action="export-limpieza" class="form-horizontal" method="get">
+       <div class="form-group">
+           <div class="col-sm-6">
+               <input type="submit" class="btn btn-primary" value="Descargar Material de Limpieza" >
+           </div>
+       </div>
+  </form>
+  <br>
+  <form action="export-electronica" class="form-horizontal" method="get">
+      <div class="form-group">
+          <div class="col-sm-6">
+              <input type="submit" class="btn btn-primary" value="Descargar Electronica y Electrica" >
+          </div>
+      </div>
+ </form>
+ <br>
+ <form action="export-medicina" class="form-horizontal" method="get">
+     <div class="form-group">
+         <div class="col-sm-6">
+             <input type="submit" class="btn btn-primary" value="Descargar Medicina" >
+         </div>
+     </div>
+</form>
+<br>
+<form action="export-tonner" class="form-horizontal" method="get">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <input type="submit" class="btn btn-primary" value="Descargar Tonner e impresoras" >
+        </div>
+    </div>
+</form>
 </div>
     </div>
 @endsection
