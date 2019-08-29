@@ -73,7 +73,7 @@
                     @if (Auth::check())
                       <!--  <a href="{{ url('/home') }}">Inicio</a>-->
                         <a href="{{ url('/index') }}">Servicios</a>
-                      
+
                     @else
                         <!--<a href="{{ url('/posts') }}">Atenciones</a>-->
                         <a href="{{ url('/login') }}">Login</a>
@@ -88,7 +88,7 @@
                     SERVICIOS GENERALES
                 </div>
                 <div>
-                    <img src="{{ asset('img/goldfinch.jpg') }}">
+                    <img src="{{ asset('img/pabic.png') }}" width="20%">
                 </div>
             </div>
         </div>

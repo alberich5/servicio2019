@@ -76,6 +76,10 @@
                               <ul class="dropdown-menu" role="menu">
                                       <li><a href="{{ url('/entrada') }}">Entrada Papeleria</a></li>
                                       <li><a href="{{ url('/refaciones') }}">Entrada Refaciones</a></li>
+                                      <li><a href="{{ url('/limpieza') }}">Entrada Limpieza</a></li>
+                                      <li><a href="{{ url('/electronica') }}">Entrada Eletronica</a></li>
+                                      <li><a href="{{ url('/medicina') }}">Entrada Medicina</a></li>
+                                      <li><a href="{{ url('/tonner') }}">Entrada Tonner</a></li>
                               </ul>
                           </li>
                             <li><a href="{{ url('/salida') }}">Salida</a></li>

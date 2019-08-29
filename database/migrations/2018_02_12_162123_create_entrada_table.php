@@ -31,6 +31,7 @@ class CreateEntradaTable extends Migration
           $table->string('status');
           $table->string('ubicacion');
           $table->string('motivo');
+          $table->string('tipo');
           $table->timestamp('created_at')->nullable();
           $table->timestamp('updated_at')->nullable();
       });

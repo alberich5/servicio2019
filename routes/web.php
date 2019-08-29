@@ -32,6 +32,10 @@ Route::get('ubicacion', 'servicio\EntradaController@ubicacion');
 Route::get('salida', 'servicio\PostsController@salida');
 Route::get('entrada', 'servicio\PostsController@entrada');
 Route::get('refaciones', 'servicio\PostsController@refaciones');
+Route::get('limpieza', 'servicio\PostsController@limpieza');
+Route::get('electronica', 'servicio\PostsController@electronica');
+Route::get('medicina', 'servicio\PostsController@medicina');
+Route::get('tonner', 'servicio\PostsController@tonner');
 
 Route::get('unidad', 'servicio\UnidadController@index');
 Route::get('articulos', 'servicio\EntradaController@mostrar');
