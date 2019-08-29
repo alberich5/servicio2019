@@ -11,47 +11,47 @@
             <div class="content">
               <div class="content-txt">
                 <h1>Papeleria</h1>
-                <h2 id="color">Todo lo relacionado con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
+                <h2 id="color">Todo lo relacionado a Papeleria con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
               </div>
             </div>
             <div class="image">
-              <img src="http://img11.hostingpics.net/pics/412998972.jpg">
+              <img src="https://http2.mlstatic.com/material-de-papeleria-y-oficina-D_NQ_NP_823411-MLM20534249891_122015-F.jpg">
             </div>
           </div>
           <div class="slider">
             <div class="legend"></div>
             <div class="content">
               <div class="content-txt">
-                <h1>Equipos</h1>
-                <h2 id="color">Todo lo relacionado con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
+                <h1>Refacciones</h1>
+                <h2 id="color">Todo lo relacionado a Refacciones con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
               </div>
             </div>
             <div class="image">
-              <img src="http://img11.hostingpics.net/pics/767361311.jpg">
+              <img src="https://blog.segundamano.mx/wp-content/uploads/2018/10/Blog_autopartes.jpg">
             </div>
           </div>
           <div class="slider">
             <div class="legend"></div>
             <div class="content">
               <div class="content-txt">
-                <h1>Otros</h1>
-                <h2 id="color">Todo lo relacionado con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
+                <h1>Material de Limpieza</h1>
+                <h2 id="color">Todo lo relacionado de Limpieza con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
               </div>
             </div>
             <div class="image">
-              <img src="http://img11.hostingpics.net/pics/990696943.jpg">
+              <img src="http://blog.flota.es/wp-content/uploads/2015/12/productos-limpieza-basicos.jpg">
             </div>
           </div>
           <div class="slider">
             <div class="legend"></div>
             <div class="content">
               <div class="content-txt">
-                <h1>Otros</h1>
+                <h1>Electrica y Electronica</h1>
                 <h2 id="color">Todo lo relacionado con lo que utilizan las Areas de la Policia Auxiliar, Bancaria y Comercial.</h2>
               </div>
             </div>
             <div class="image">
-              <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              <img src="https://mlstaticquic-a.akamaihd.net/materiales-e-insumos-electricos-para-la-industria-y-el-hogar-D_NQ_NP_920137-MLU27706369742_072018-F.jpg">
             </div>
           </div>
         </div>
