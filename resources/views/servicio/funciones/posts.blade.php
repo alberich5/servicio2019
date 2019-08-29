@@ -3,7 +3,7 @@
   <link href="{{ asset('css/slider.css') }}" rel="stylesheet">
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top:7%;">
       <div id="slider">
         <div class="slides">
           <div class="slider">

@@ -26,7 +26,7 @@
     </script>
     <style media="screen">
     #welcome{
-       background-image: url("img/prueba2.jpg");
+       background-image: url("img/prueba3.jpg");
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size:100% 100%;

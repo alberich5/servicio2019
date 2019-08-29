@@ -45,7 +45,7 @@
         <div class="container">
             <div class="content">
                 <div class="title"><h3>NO SE ENCUENTRA LA RUTA</h3> </div>
-                <div class="title"><h4><a href="{{ url('/posts') }}">Inicio</a></h4> </div>
+                <div class="title"><h4><a href="{{ url('/index') }}">Inicio</a></h4> </div>
             </div>
         </div>
     </body>

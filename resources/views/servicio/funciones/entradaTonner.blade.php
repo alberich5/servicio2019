@@ -52,8 +52,8 @@
             <div class="col-sm-10">
               <label for="status">Unidad:</label>
               <select name="unidad" class="form-control">
-                <option v-for="uni in unidad" v-bind:value="uni.id" class="lista">
-                  @{{ uni.nombre}}
+                <option v-for="uni in unidad" v-bind:value="uni.id" class="lista" v-text="uni.nombre">
+
                 </option>
               </select>
             </div>
