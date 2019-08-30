@@ -284,6 +284,28 @@ class EntradaController extends Controller
 
   }
 
+  public function mostrararticulosubica(Request $request)
+  {
+    $consul=strtoupper($request->get('query'));
+    $entradas = Entrada::leftjoin('unidad', 'entrada.id_unidad', '=', 'unidad.id')
+    ->select('entrada.id','entrada.id_usuario','entrada.id_unidad','entrada.fecha_ingreso','entrada.descripcion','entrada.marca','entrada.precio','entrada.ubicacion','entrada.precio_iva','entrada.cantidad','entrada.cantidadOriginal','entrada.status','entrada.motivo','unidad.nombre')
+    ->where('entrada.descripcion','like', "%".$consul."%")
+    ->where('entrada.status','=', 'activo')
+    ->orderBy('entrada.created_at', 'asc')
+    ->get();
+    //dd($entradas);
+      $total = count($entradas);
+    for ($i=0; $i <$total ; $i++) {
+        $entradas[$i]->prueba=0;
+    }
+      if ($total>=1) {
+      return $entradas;
+      }else{
+        return $entradas;
+      }
+    return $entradas;
+  }
+
 
 
   public function mostrarArticulos(Request $request)
@@ -297,7 +319,6 @@ class EntradaController extends Controller
     ->orderBy('entrada.created_at', 'asc')
     ->get();
     //dd($entradas);
-
       $total = count($entradas);
     for ($i=0; $i <$total ; $i++) {
         $entradas[$i]->prueba=0;
@@ -307,7 +328,6 @@ class EntradaController extends Controller
       }else{
         return $entradas;
       }
-
     return $entradas;
   }
 

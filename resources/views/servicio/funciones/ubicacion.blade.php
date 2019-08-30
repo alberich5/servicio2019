@@ -104,7 +104,7 @@
               },
               mostrarArticulos:function(){
                 if (this.clienteSelecionado>0) {
-                  var urlStatus = '/mostrararticulos?query=' + this.buscar;
+                  var urlStatus = '/mostrararticulosubica?query=' + this.buscar;
                     axios.get(urlStatus).then(response => {
                     this.articulos = response.data
                     this.veriificarexistencia();

@@ -104,7 +104,6 @@
                   });
                   swal('Se reactivo','Se reactivo producto','success');
                 }else{
-
                   swal('Contraseña Incorrecta...','No se puede reactivar producto','error');
                 }
               },

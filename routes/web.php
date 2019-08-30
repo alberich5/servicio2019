@@ -61,6 +61,7 @@ Route::group(['middleware'=> 'Role:user'], function(){
   Route::get('mostraruser', 'servicio\UsersController@mostrar');
   Route::get('mosalidas', 'servicio\SalidaController@mostrar');
   Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
+  Route::get('mostrararticulosubica', 'servicio\EntradaController@mostrararticulosubica');
   Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
   Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');
   Route::get('mostrarElectronica', 'servicio\EntradaController@mostrarElectronica');
