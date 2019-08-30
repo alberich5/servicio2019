@@ -38,7 +38,9 @@ foreach($users as $index => $user) {
 
     \Excel::create('Entrada', function($excel) {
 $consul = request()->get('fecha');
-  $users = Entrada::where('fecha_ingreso','=', $consul)
+  $users = Entrada::leftjoin('users', 'entrada.id_usuario', '=', 'users.id')
+  ->select('entrada.fecha_ingreso','entrada.descripcion','entrada.marca','entrada.precio','entrada.cantidad','entrada.status','entrada.ubicacion','entrada.tipo','users.name as UsuarioRegistra')
+  ->where('entrada.fecha_ingreso','=', $consul)
   ->get();
 
   $excel->sheet('Users', function($sheet) use($users) {
@@ -95,7 +97,8 @@ foreach($users as $index => $user) {
       ->leftjoin('entrada as entra','sali.id_entrada','=','entra.id')
       ->leftjoin('cliente as cli','sali.id_cliente','=','cli.id')
       ->leftjoin('unidad as uni','entra.id_unidad','=','uni.id')
-      ->select('sali.cantidad','entra.descripcion as articulo','uni.nombre as tipo','cli.nombre as cliente','sali.fecha_salida as Fecha_Salida')
+      ->leftjoin('users', 'sali.id_usuario', '=', 'users.id')
+      ->select('sali.cantidad','entra.descripcion as articulo','uni.nombre as tipo','cli.nombre as cliente','sali.fecha_salida as Fecha_Salida','users.name as UsuarioSalida')
       ->where('fecha_salida','=',$consul )
       ->where('sali.status','=','activo' )
       ->get();
@@ -152,7 +155,7 @@ foreach($users as $index => $user) {
         ->leftjoin('log as lo','entra.id','=','lo.id_entrada')
         ->select('entra.fecha_ingreso','entra.descripcion','entra.marca','entra.destinado','uni.nombre','entra.precio','entra.precio_iva','lo.cantidad_inicial as existenciaini',DB::raw('(lo.cantidad_inicial - entra.cantidad) as salidas'),'entra.cantidad as existenciafina',DB::raw('(entra.precio*entra.cantidad) as costo_final'))
         ->where('entra.status','=','activo' )
-        ->where('entra.tipo','=','r' )
+        ->where('entra.tipo','=','refaccion' )
         ->get();
 
         $data = array();
@@ -229,7 +232,7 @@ foreach($users as $index => $user) {
         }
 
         //medicina
-        public function exportElectronica(Request $request)
+        public function exportMedicina(Request $request)
           {
             \Excel::create('medicina', function($excel) {
               $mes = request()->get('mes');
@@ -326,7 +329,7 @@ foreach($users as $index => $user) {
       ->leftjoin('log as lo','entra.id','=','lo.id_entrada')
       ->select('entra.fecha_ingreso','entra.descripcion','entra.marca','uni.nombre','entra.precio','entra.precio_iva','lo.cantidad_inicial as existenciaini',DB::raw('(lo.cantidad_inicial - entra.cantidad) as salidas'),'entra.cantidad as existenciafina',DB::raw('(entra.precio*entra.cantidad) as costo_final'))
       ->where('entra.status','=','activo' )
-        ->where('entra.tipo','=','p' )
+        ->where('entra.tipo','=','papeleria' )
       ->get();
 
       $data = array();

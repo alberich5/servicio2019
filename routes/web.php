@@ -19,93 +19,90 @@ Auth::routes();
 
 Route::get('/home', 'servicio\HomeController@index');
 
-Route::get('index', 'servicio\PostsController@index');
 
-Route::get('quejas', 'servicio\PostsController@queja');
-Route::get('reporte', 'servicio\PostsController@grafica');
-Route::get('filtro', 'servicio\PostsController@filtro');
-Route::get('status', 'servicio\PostsController@status');
+Route::group(['middleware'=> 'Role:user'], function(){
+  Route::get('index', 'servicio\PostsController@index');
 
-Route::get('ubicacion', 'servicio\EntradaController@ubicacion');
+  Route::get('quejas', 'servicio\PostsController@queja');
+  Route::get('reporte', 'servicio\PostsController@grafica');
+  Route::get('filtro', 'servicio\PostsController@filtro');
+  Route::get('status', 'servicio\PostsController@status');
 
-//servicios gernerales
-Route::get('salida', 'servicio\PostsController@salida');
-Route::get('salida-refaccion', 'servicio\PostsController@salidarefaccion');
-Route::get('salida-limpieza', 'servicio\PostsController@salidarelimpieza');
-Route::get('salida-electronica', 'servicio\PostsController@salidarelectronica');
-Route::get('salida-medicina', 'servicio\PostsController@salidarmedicina');
-Route::get('salida-tonner', 'servicio\PostsController@salidartonner');
+  Route::get('ubicacion', 'servicio\EntradaController@ubicacion');
 
-Route::get('entrada', 'servicio\PostsController@entrada');
-Route::get('refaciones', 'servicio\PostsController@refaciones');
-Route::get('limpieza', 'servicio\PostsController@limpieza');
-Route::get('electronica', 'servicio\PostsController@electronica');
-Route::get('medicina', 'servicio\PostsController@medicina');
-Route::get('tonner', 'servicio\PostsController@tonner');
+  //servicios gernerales
+  Route::get('salida', 'servicio\PostsController@salida');
+  Route::get('salida-refaccion', 'servicio\PostsController@salidarefaccion');
+  Route::get('salida-limpieza', 'servicio\PostsController@salidarelimpieza');
+  Route::get('salida-electronica', 'servicio\PostsController@salidarelectronica');
+  Route::get('salida-medicina', 'servicio\PostsController@salidarmedicina');
+  Route::get('salida-tonner', 'servicio\PostsController@salidartonner');
 
-Route::get('unidad', 'servicio\UnidadController@index');
-Route::get('articulos', 'servicio\EntradaController@mostrar');
-Route::get('cancelados', 'servicio\EntradaController@cancelados');
-Route::get('canceladosvue', 'servicio\EntradaController@canceladosvue');
-Route::get('verificarproducto', 'servicio\EntradaController@verificarproducto');
-Route::get('reactivar', 'servicio\EntradaController@reactivar');
-Route::get('mostrarsalidas', 'servicio\SalidaController@mostrarsalidas');
-Route::get('graficavue', 'servicio\GraficaController@index');
-Route::get('cargarcancelados', 'servicio\GraficaController@cargararticulosCancelados');
-Route::get('cargarclientes', 'servicio\ClienteController@cargar');
-Route::get('cancelarsalida/{id}', 'servicio\SalidaController@cancelarsalida');
+  Route::get('entrada', 'servicio\PostsController@entrada');
+  Route::get('refaciones', 'servicio\PostsController@refaciones');
+  Route::get('limpieza', 'servicio\PostsController@limpieza');
+  Route::get('electronica', 'servicio\PostsController@electronica');
+  Route::get('medicina', 'servicio\PostsController@medicina');
+  Route::get('tonner', 'servicio\PostsController@tonner');
 
-Route::get('mosclientes', 'servicio\ClienteController@mostrar');
-Route::get('mostraruser', 'servicio\UsersController@mostrar');
-Route::get('mosalidas', 'servicio\SalidaController@mostrar');
-Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
-Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
-Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');
-Route::get('mostrarElectronica', 'servicio\EntradaController@mostrarElectronica');
-Route::get('mostrarMedicina', 'servicio\EntradaController@mostrarMedicina');
-Route::get('mostrarTonner', 'servicio\EntradaController@mostrarTonner');
+  Route::get('unidad', 'servicio\UnidadController@index');
+  Route::get('articulos', 'servicio\EntradaController@mostrar');
+  Route::get('cancelados', 'servicio\EntradaController@cancelados');
+  Route::get('canceladosvue', 'servicio\EntradaController@canceladosvue');
+  Route::get('verificarproducto', 'servicio\EntradaController@verificarproducto');
+  Route::get('reactivar', 'servicio\EntradaController@reactivar');
+  Route::get('mostrarsalidas', 'servicio\SalidaController@mostrarsalidas');
+  Route::get('graficavue', 'servicio\GraficaController@index');
+  Route::get('cargarcancelados', 'servicio\GraficaController@cargararticulosCancelados');
+  Route::get('cargarclientes', 'servicio\ClienteController@cargar');
+  Route::get('cancelarsalida/{id}', 'servicio\SalidaController@cancelarsalida');
 
-Route::get('guardarSalida', 'servicio\SalidaController@guadar');
-Route::post('guardarBD', 'servicio\SalidaController@guardar');
-Route::get('pruebas', 'servicio\SalidaController@pruebas');
-Route::get('crear', 'servicio\SalidaController@crearWord');
-Route::get('especifico', 'servicio\SalidaController@especifico');
-//Route::get('historial', 'SalidaController@historial');
-Route::post('historial', 'servicio\SalidaController@historial');
+  Route::get('mosclientes', 'servicio\ClienteController@mostrar');
+  Route::get('mostraruser', 'servicio\UsersController@mostrar');
+  Route::get('mosalidas', 'servicio\SalidaController@mostrar');
+  Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
+  Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
+  Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');
+  Route::get('mostrarElectronica', 'servicio\EntradaController@mostrarElectronica');
+  Route::get('mostrarMedicina', 'servicio\EntradaController@mostrarMedicina');
+  Route::get('mostrarTonner', 'servicio\EntradaController@mostrarTonner');
 
-//son las rutas donde se actulizar los productos
-Route::post('editar', 'servicio\EntradaController@editar');
-Route::post('actualizararticulo', 'servicio\EntradaController@actual');
+  Route::get('guardarSalida', 'servicio\SalidaController@guadar');
+  Route::post('guardarBD', 'servicio\SalidaController@guardar');
+  Route::get('pruebas', 'servicio\SalidaController@pruebas');
+  Route::get('crear', 'servicio\SalidaController@crearWord');
+  Route::get('especifico', 'servicio\SalidaController@especifico');
+  //Route::get('historial', 'SalidaController@historial');
+  Route::post('historial', 'servicio\SalidaController@historial');
 
-//Serivicios fromArray
-Route::get('tab', 'servicio\ExcelController@tabla');
-Route::get('tab2', 'servicio\ExcelController@tabla2');
-Route::get('buscarexcel', 'servicio\ExcelController@buscar');
+  //son las rutas donde se actulizar los productos
+  Route::post('editar', 'servicio\EntradaController@editar');
+  Route::post('actualizararticulo', 'servicio\EntradaController@actual');
 
-//ruta de Excel
-Route::get('/export-users', 'servicio\ExcelController@exportUsers');
-Route::get('/export-entradas', 'servicio\ExcelController@exportEntradas');
-Route::get('/export-salidas', 'servicio\ExcelController@exportSalidas');
-Route::get('/export-productos', 'servicio\ExcelController@exportProducto');
-Route::get('/export-mensual', 'servicio\ExcelController@exportMensual');
-Route::get('/export-cancelado', 'servicio\ExcelController@exportCancelados');
-Route::get('/export-prueba', 'servicio\ExcelController@pruebaexcel');
+  //Serivicios fromArray
+  Route::get('tab', 'servicio\ExcelController@tabla');
+  Route::get('tab2', 'servicio\ExcelController@tabla2');
+  Route::get('buscarexcel', 'servicio\ExcelController@buscar');
 
-Route::get('/export-refaciones', 'servicio\ExcelController@exportrefaciones');
-Route::get('/export-limpieza', 'servicio\ExcelController@exportlimpieza');
-Route::get('/export-electronica', 'servicio\ExcelController@exportElectronica');
-Route::get('/export-medicina', 'servicio\ExcelController@exportMedicina');
-Route::get('/export-tonner', 'servicio\ExcelController@exportTonner');
-//consumir
-Route::get('traerUnidad', 'servicio\UnidadController@traerUnidad');
-Route::get('traerCliente', 'servicio\ClienteController@traerCliente');
-Route::get('pendientes', 'servicio\PostsController@pendiente');
-Route::get('cliente', 'servicio\PostsController@cliente');
+  //ruta de Excel
+  Route::get('/export-users', 'servicio\ExcelController@exportUsers');
+  Route::get('/export-entradas', 'servicio\ExcelController@exportEntradas');
+  Route::get('/export-salidas', 'servicio\ExcelController@exportSalidas');
+  Route::get('/export-productos', 'servicio\ExcelController@exportProducto');
+  Route::get('/export-mensual', 'servicio\ExcelController@exportMensual');
+  Route::get('/export-cancelado', 'servicio\ExcelController@exportCancelados');
+  Route::get('/export-prueba', 'servicio\ExcelController@pruebaexcel');
 
-Route::get('howto', function (){
-
-    return view('howto');
-
+  Route::get('/export-refaciones', 'servicio\ExcelController@exportrefaciones');
+  Route::get('/export-limpieza', 'servicio\ExcelController@exportlimpieza');
+  Route::get('/export-electronica', 'servicio\ExcelController@exportElectronica');
+  Route::get('/export-medicina', 'servicio\ExcelController@exportMedicina');
+  Route::get('/export-tonner', 'servicio\ExcelController@exportTonner');
+  //consumir
+  Route::get('traerUnidad', 'servicio\UnidadController@traerUnidad');
+  Route::get('traerCliente', 'servicio\ClienteController@traerCliente');
+  Route::get('pendientes', 'servicio\PostsController@pendiente');
+  Route::get('cliente', 'servicio\PostsController@cliente');
 });
 
 Route::group(['middleware'=> 'Role:admin'], function(){
