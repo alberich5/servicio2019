@@ -47,6 +47,8 @@ Route::group(['middleware'=> 'Role:user'], function(){
 
   Route::get('unidad', 'servicio\UnidadController@index');
   Route::get('articulos', 'servicio\EntradaController@mostrar');
+  Route::post('abastercer', 'servicio\EntradaController@abastercer');
+
   Route::get('cancelados', 'servicio\EntradaController@cancelados');
   Route::get('canceladosvue', 'servicio\EntradaController@canceladosvue');
   Route::get('verificarproducto', 'servicio\EntradaController@verificarproducto');
@@ -60,7 +62,7 @@ Route::group(['middleware'=> 'Role:user'], function(){
   Route::get('mosclientes', 'servicio\ClienteController@mostrar');
   Route::get('mostraruser', 'servicio\UsersController@mostrar');
   Route::get('mosalidas', 'servicio\SalidaController@mostrar');
-  Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos');
+  Route::get('mostrararticulos', 'servicio\EntradaController@mostrarArticulos'); 
   Route::get('mostrararticulosubica', 'servicio\EntradaController@mostrararticulosubica');
   Route::get('mostrarRefacion', 'servicio\EntradaController@mostrarRefacion');
   Route::get('mostrarLimpieza', 'servicio\EntradaController@mostrarLimpieza');

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Entrada;
 use App\Log;
+use App\Abastecer;
 use DB;
 
 class EntradaController extends Controller
@@ -452,6 +453,30 @@ class EntradaController extends Controller
     $entrada->update();
     return "se reactivo producto";
   }
+
+   public function abastercer(Request $request)
+  {
+
+    $cantidadvieja = Entrada::where('id','=',$request['idarticulo'])->get();
+    $valorBD="";
+      foreach ($cantidadvieja as $entra) {
+          $valorBD = $entra->cantidad;
+      }
+    $valorFinal=$valorBD+ $request['cantidadabastecer'];
+    $entrada=Entrada::findOrFail($request->get('idarticulo'));
+    $entrada->cantidad=$valorFinal;
+    $entrada->update();
+
+    $abastecer=new Abastecer;
+        $abastecer->nombre_usuario=Auth::id();
+        $abastecer->contenido="Abastecio producto";
+        $abastecer->cantidad=$request['cantidadabastecer'];
+        $abastecer->articulo=$request['idarticulo'];
+        $abastecer->save();
+
+    return "Se Agrego Producto";
+  }
+
 
   public function verificarproducto(Request $request)
   {

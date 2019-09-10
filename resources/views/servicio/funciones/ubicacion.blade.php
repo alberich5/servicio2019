@@ -37,6 +37,8 @@
                     <th>Marca</th>
                     <th>Medida</th>
                     <th>Ubicacion</th>
+                    <th>Cantidad</th>
+                    <th>Opciones</th>
                   </thead>
                   <tbody>
                     <tr v-for="(art, index) in articulos">
@@ -46,6 +48,8 @@
                       <td v-text="art.marca"></td>
                       <td v-text="art.nombre"></td>
                       <td v-text="art.ubicacion"></td>
+                      <td v-text="art.cantidad"></td>
+                      <td><button type="button" class="btn btn-primary" v-on:click.prevent="abastercer(art.id)">Agregar</button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -53,6 +57,8 @@
           </div>
       </div>
   </div>
+
+  @include('servicio.funciones.Reabastecer')
 
   <!--<div class="row">
     <div class="col-xs-12">
@@ -88,6 +94,8 @@
               clienteSelecionado:'1',
               cantidad:'',
               cantidad2:'',
+              reabastecer:'',
+              reabastecerId:'',
               veri:'',
               articulos:[],
               totalCargado:[],
@@ -160,8 +168,27 @@
               },
 
               Checar: function() {
+              },
 
-
+              abastercer:function(id){
+                $('#modalAbastecerArticulo').modal('show');
+                this.reabastecerId=id;
+              },
+              storeAbastecer:function(){
+                //alert(this.reabastecer); 
+                  var url= '/abastercer';
+                  axios.post(url,{
+                    idarticulo:this.reabastecerId,
+                    cantidadabastecer: this.reabastecer
+                  }).then(response=>{
+                    $('#modalAbastecerArticulo').modal('hide'); 
+                    swal("Se Agrego la cantidad de  "+this.reabastecer, "Muy Bien", "success");
+                    
+                    this.reabastecer='';
+                    this.reabastecerId='';
+                  }).catch(error=>{
+                  });
+                             
               },
 
 
