@@ -49,7 +49,7 @@
                       <td v-text="art.nombre"></td>
                       <td v-text="art.ubicacion"></td>
                       <td v-text="art.cantidad"></td>
-                      <td><button type="button" class="btn btn-primary" v-on:click.prevent="abastercer(art.id)">Agregar</button></td>
+                      <td><button type="button" class="btn btn-primary" v-on:click.prevent="abastercer(art.id)">Abastecer</button></td>
                     </tr>
                   </tbody>
                 </table>

@@ -89,10 +89,10 @@
                               <ul class="dropdown-menu" role="menu">
                                       <li><a href="{{ url('/salida') }}">Salida Papeleria</a></li>
                                       <li><a href="{{ url('/salida-refaccion') }}">Salida Refaciones</a></li>
-                                      <li><a href="{{ url('/salida-limpieza') }}">Salida Limpieza</a></li>
+                                     <!---<li><a href="{{ url('/salida-limpieza') }}">Salida Limpieza</a></li>
                                       <li><a href="{{ url('/salida-electronica') }}">Salida Eletronica</a></li>
                                       <li><a href="{{ url('/salida-medicina') }}">Salida Medicina</a></li>
-                                      <li><a href="{{ url('/salida-tonner') }}">Salida Tonner</a></li>
+                                      <li><a href="{{ url('/salida-tonner') }}">Salida Tonner</a></li>--> 
                               </ul>
                           </li>
                             <li class="dropdown">
@@ -115,6 +115,7 @@
                                         <!--<li><a href="{{ url('/mosclientes') }}">Clientes</a></li>-->
                                         <li><a href="{{ url('/cancelados') }}">Entradas Cancelados</a></li>
                                         <li><a href="{{ url('/mostrarsalidas') }}">Mostrar Salidas</a></li>
+                                        <!--<li><a href="{{ url('/mostrar-abastercer') }}">Mostrar Abasteciminetos</a></li>-->
                                         <li><a href="{{ url('/especifico') }}">Bitacora</a></li>
                                         <li><a href="{{ url('/ubicacion') }}">Ubicacion</a></li>
 

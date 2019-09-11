@@ -48,6 +48,7 @@ Route::group(['middleware'=> 'Role:user'], function(){
   Route::get('unidad', 'servicio\UnidadController@index');
   Route::get('articulos', 'servicio\EntradaController@mostrar');
   Route::post('abastercer', 'servicio\EntradaController@abastercer');
+  Route::get('mostrar-abastercer', 'servicio\EntradaController@mostrarAbastercer');
 
   Route::get('cancelados', 'servicio\EntradaController@cancelados');
   Route::get('canceladosvue', 'servicio\EntradaController@canceladosvue');

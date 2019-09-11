@@ -316,7 +316,6 @@ class EntradaController extends Controller
     ->select('entrada.id','entrada.id_usuario','entrada.id_unidad','entrada.fecha_ingreso','entrada.descripcion','entrada.marca','entrada.precio','entrada.ubicacion','entrada.precio_iva','entrada.cantidad','entrada.cantidadOriginal','entrada.status','entrada.motivo','unidad.nombre')
     ->where('entrada.descripcion','like', "%".$consul."%")
     ->where('entrada.status','=', 'activo')
-    ->where('entrada.tipo','=', 'papeleria')
     ->orderBy('entrada.created_at', 'asc')
     ->get();
     //dd($entradas);
@@ -475,6 +474,18 @@ class EntradaController extends Controller
         $abastecer->save();
 
     return "Se Agrego Producto";
+  }
+
+  //mostrar Abastecer 
+  public function mostrarAbastercer(Request $request)
+  {
+     $mostAbastecer = Abastecer::leftjoin('entrada', 'absatecer.articulo', '=', 'entrada.id')
+              ->select('absatecer.id','entrada.descripcion','absatecer.cantidad','absatecer.nombre_usuario','absatecer.created_at')
+               ->paginate(10);
+
+
+      return view('servicio.funciones.abastecerHecho',compact("mostAbastecer"));
+          
   }
 
 
